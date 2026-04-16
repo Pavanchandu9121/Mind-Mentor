@@ -5,3 +5,14 @@ __pycache__/
 *.exe
 .cache/
 model.joblib
+
+# Service specific envs
+api-gateway/.env
+auth-service/.env
+chat-service/.env
+tracking-service/.env
+community-service/.env
+screening-service/.env
+assessment-service/.env
+healthcare-service/.env
+recommendation-service/.env
