@@ -1,0 +1,22 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+
+# Face emotion detection
+fer
+opencv-python-headless
+
+# Voice / audio processing
+librosa
+soundfile
+scikit-learn
+
+# Speech-to-text (local, CPU-optimized)
+faster-whisper
+
+# Text sentiment
+vaderSentiment
+
+# Common
+numpy

@@ -1,0 +1,26 @@
+{
+  "name": "mind-mentor-microservices",
+  "version": "2.0.0",
+  "description": "Root package for running all microservices concurrently",
+  "scripts": {
+    "start:gateway": "cd api-gateway && npm start",
+    "start:auth": "cd auth-service && npm start",
+    "start:assessment": "cd assessment-service && npm start",
+    "start:recommendation": "cd recommendation-service && npm start",
+    "start:tracking": "cd tracking-service && npm start",
+    "start:notification": "cd notification-service && npm start",
+    "start:healthcare": "cd healthcare-service && npm start",
+    "start:community": "cd community-service && npm start",
+    "start:admin": "cd admin-service && npm start",
+    "start:ai": "cd ai-prediction-service && py -m uvicorn app:app --host 0.0.0.0 --port 5001",
+    "start:emotion": "cd emotion-analysis-service && py -m uvicorn app:app --host 0.0.0.0 --port 5008",
+    "start:analytics": "cd analytics-service && py -m uvicorn app:app --host 0.0.0.0 --port 5009",
+    "start:screening": "cd screening-service && npm run dev",
+    "start:client": "cd client && npm run dev",
+    "start:chat": "cd chat-service && npm run dev",
+    "start:all": "concurrently -n gateway,auth,assess,recom,track,notify,health,community,admin,ai,emotion,analytics,screen,client,chat -c cyan,magenta,blue,yellow,green,red,cyan,white,magenta,blue,yellow,green,red,cyan,gray \"npm run start:gateway\" \"npm run start:auth\" \"npm run start:assessment\" \"npm run start:recommendation\" \"npm run start:tracking\" \"npm run start:notification\" \"npm run start:healthcare\" \"npm run start:community\" \"npm run start:admin\" \"npm run start:ai\" \"npm run start:emotion\" \"npm run start:analytics\" \"npm run start:screening\" \"npm run start:client\" \"npm run start:chat\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

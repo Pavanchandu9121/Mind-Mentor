@@ -1,0 +1,108 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - AUTH_SERVICE_URL=http://auth-service:5002
+      - ASSESSMENT_SERVICE_URL=http://assessment-service:5003
+      - RECOMMENDATION_SERVICE_URL=http://recommendation-service:5004
+      - TRACKING_SERVICE_URL=http://tracking-service:5005
+      - AI_SERVICE_URL=http://ai-prediction-service:5001
+      - SCREENING_SERVICE_URL=http://screening-service:5011
+      - EMOTION_SERVICE_URL=http://emotion-analysis-service:5008
+    depends_on:
+      - auth-service
+      - assessment-service
+      - recommendation-service
+      - tracking-service
+      - ai-prediction-service
+      - screening-service
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "5002:5002"
+    environment:
+      - PORT=5002
+      - JWT_SECRET=mindmentor_secret_key_2024
+
+  assessment-service:
+    build: ./assessment-service
+    ports:
+      - "5003:5003"
+    environment:
+      - PORT=5003
+      - JWT_SECRET=mindmentor_secret_key_2024
+      - AI_SERVICE_URL=http://ai-prediction-service:5001
+    depends_on:
+      - ai-prediction-service
+
+  recommendation-service:
+    build: ./recommendation-service
+    ports:
+      - "5004:5004"
+    environment:
+      - PORT=5004
+
+  tracking-service:
+    build: ./tracking-service
+    ports:
+      - "5005:5005"
+    environment:
+      - PORT=5005
+      - JWT_SECRET=mindmentor_secret_key_2024
+
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "5006:5006"
+    environment:
+      - PORT=5006
+
+  healthcare-service:
+    build: ./healthcare-service
+    ports:
+      - "5007:5007"
+    environment:
+      - PORT=5007
+
+  admin-service:
+    build: ./admin-service
+    ports:
+      - "5010:5010"
+    environment:
+      - PORT=5010
+
+  ai-prediction-service:
+    build: ./ai-prediction-service
+    ports:
+      - "5001:5001"
+
+  emotion-analysis-service:
+    build: ./emotion-analysis-service
+    ports:
+      - "5008:5008"
+
+  analytics-service:
+    build: ./analytics-service
+    ports:
+      - "5009:5009"
+
+  screening-service:
+    build: ./screening-service
+    ports:
+      - "5011:5011"
+    environment:
+      - PORT=5011
+      - JWT_SECRET=mindmentor_secret_key_2024
+      - EMOTION_SERVICE_URL=http://emotion-analysis-service:5008
+      - AI_SERVICE_URL=http://ai-prediction-service:5001
+      - ASSESSMENT_SERVICE_URL=http://assessment-service:5003
+    depends_on:
+      - emotion-analysis-service
+      - ai-prediction-service
+

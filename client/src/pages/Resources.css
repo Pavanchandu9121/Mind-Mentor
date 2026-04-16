@@ -1,0 +1,157 @@
+.resources-page {
+  padding-bottom: 80px;
+}
+
+.resources-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.resources-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.resources-header p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.resource-section {
+  margin-bottom: 48px;
+}
+
+.resource-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.section-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+/* ========== CRISIS ========== */
+.crisis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.crisis-card {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+}
+
+.crisis-card.urgent {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: rgba(248, 113, 113, 0.03);
+}
+
+.resource-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.resource-body h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.crisis-contact {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 6px;
+}
+
+.resource-body p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ========== SELF-HELP ========== */
+.selfhelp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.selfhelp-card {
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.resource-icon-lg {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.selfhelp-card h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.selfhelp-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ========== FIND HELP ========== */
+.findhelp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.findhelp-card {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.findhelp-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.findhelp-card h4 {
+  color: var(--accent-primary);
+}
+
+/* ========== DISCLAIMER ========== */
+.resources-disclaimer {
+  border-color: rgba(251, 191, 36, 0.2);
+  background: rgba(251, 191, 36, 0.03);
+  margin-top: 48px;
+}
+
+.resources-disclaimer p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .crisis-grid,
+  .findhelp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selfhelp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .selfhelp-grid {
+    grid-template-columns: 1fr;
+  }
+}

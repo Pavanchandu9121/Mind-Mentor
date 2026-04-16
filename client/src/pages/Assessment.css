@@ -1,0 +1,235 @@
+.assessment-page {
+  min-height: calc(100vh - 64px);
+}
+
+/* ========== INTRO ========== */
+.assessment-intro {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.intro-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.assessment-intro h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.intro-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+.intro-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.intro-card {
+  text-align: left;
+  padding: 20px;
+}
+
+.intro-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.intro-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.intro-note {
+  margin-bottom: 32px;
+}
+
+.intro-note p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+/* ========== SUBMITTING ========== */
+.assessment-submitting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.assessment-submitting h2 {
+  font-size: 1.8rem;
+}
+
+.assessment-submitting p {
+  color: var(--text-secondary);
+}
+
+/* ========== QUESTION FLOW ========== */
+.assessment-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.assessment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.assessment-phase-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.assessment-counter {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.question-card {
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.4s ease;
+}
+
+.question-number {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.12;
+}
+
+.question-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.question-symptom {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+/* ========== ANSWER OPTIONS ========== */
+.answer-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.answer-option:hover {
+  background: rgba(129, 140, 248, 0.06);
+  border-color: rgba(129, 140, 248, 0.3);
+  transform: translateX(4px);
+}
+
+.answer-option.selected {
+  background: rgba(129, 140, 248, 0.12);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-primary-glow);
+}
+
+.answer-emoji {
+  font-size: 1.5rem;
+}
+
+.answer-label {
+  flex: 1;
+  font-weight: 500;
+}
+
+.answer-value {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ========== NAVIGATION ========== */
+.assessment-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.assessment-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.dot.active {
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary-glow);
+  transform: scale(1.3);
+}
+
+.dot.completed {
+  background: rgba(129, 140, 248, 0.4);
+}
+
+@media (max-width: 768px) {
+  .intro-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .question-card {
+    padding: 24px;
+  }
+
+  .question-symptom {
+    font-size: 1.1rem;
+  }
+}
